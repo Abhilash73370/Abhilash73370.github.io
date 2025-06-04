@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function greet(){
+           
+            alert(txtname.value);
+        }
+        function calc(){
+            let a = Number(t1.value) // when added number(t1.value) it takes the integer value else it is fixed to take string only and just returs string +string 
+            let b = Number(t2.value)
+            // alert(a+b)
+            dvResult.innerHTML = a + b;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txtname">
+    
+    <button  onclick="greet()" style="background-color: aqua;">Click</button>
+    <hr>
+    <input type="text" id="t1">
+    <input type="text" id="t2">
+
+    <button onclick="calc()">Submit</button>
+    <hr>
+    <div id="dvResult"></div>
+</body>
+</html>
