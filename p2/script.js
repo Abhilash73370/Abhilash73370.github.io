@@ -1,6 +1,6 @@
 const showLogin = () => {
     let str=`
-    <div class='App-Container'>
+    <div id ='App-Container'>
     <h1>Login Form</h1>
     <p><input type="text" id="txtEmail"></p>
     <p><input type="password" id="txtPass"></p>
@@ -13,6 +13,7 @@ const showLogin = () => {
 
 const showRegister = () => {
       let str=`
+       <div id = 'App-Container'>
     <h1>Register Form</h1>
     <p><input type="text" id="txtName"></p>
      <p><input type="text" id="txtEmail"></p>
