@@ -2,51 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Basic Calculator</title>
     <script>
-    function calc(){
-        let a = Number(t1.value) // when added number(t1.value) it takes the integer value else it is fixed to take string only and just returs string +string 
-        let b = Number(t2.value)
-        // alert(a+b)
-        dvResult.innerHTML = a + b;  
-     }
-     function sub(){
-        let c = Number(t3.value)
-        let d = Number(t4.value)
-        dvSub.innerHTML = c - d ;
+        const calc = () => {
+           
+            add();
+            sub();
+            mul();
+            div();
+        }
 
-     }
-     function div(){
-        let e = Number(t5.value)
-        let f = Number(t6.value)
-        dvDiv.innerHTML = e/f ;
+        function add() {
+            let a = Number(t1.value);
+            let b = Number(t2.value);
+            dvResult.innerHTML += "Sum: " + (a + b) + "<br>";
+        }
 
-     }
+        function sub() {
+            let c = Number(t1.value);
+            let d = Number(t2.value);
+            dvResult.innerHTML += "Subtraction: " + (c - d) + "<br>";
+        }
+
+        function mul() {
+            let e = Number(t1.value);
+            let f = Number(t2.value);
+            dvResult.innerHTML += "Multiplication: " + (e * f) + "<br>";
+        }
+
+        function div() {
+            let g = Number(t1.value);
+            let h = Number(t2.value);
+            if (h !== 0) {
+                dvResult.innerHTML += "Division: " + (g / h) + "<br>";
+            } else {
+                dvResult.innerHTML += "Division: Cannot divide by zero<br>";
+            }
+        }
     </script>
- 
 </head>
 <body>
-    <h1>Adding 2 numbers</h1>
-    <input type="text" id="t1">
-    <input type="text" id="t2">
-
-    <button onclick="calc()">Submit</button>
+    <h1>Basic Calculator</h1>
+    <input type="text" id="t1" >
+    <input type="text" id="t2" >
+    <button onclick="calc()">Click</button>
     <hr>
     <div id="dvResult"></div>
-    <hr>
-    <h1>Subtracting 2 numbers</h1>
-    <input type="text" id="t3">
-    <input type="text" id="t4">
-    <button onclick="sub()">Subtract</button>
-    <hr>
-    <div id="dvSub"></div>
-    <hr>
-    <h1>Dividing 2 numbers</h1>
-    <input type="text" id="t5">
-    <input type="text" id="t6">
-    <button onclick="div()">divide</button>
-    <hr>
-    <div id="dvDiv"></div>
 </body>
 </html>
