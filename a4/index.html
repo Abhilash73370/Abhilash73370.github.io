@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function calc(){
+        let a = Number(t1.value) // when added number(t1.value) it takes the integer value else it is fixed to take string only and just returs string +string 
+        let b = Number(t2.value)
+        // alert(a+b)
+        dvResult.innerHTML = a + b;  
+     }
+     function sub(){
+        let c = Number(t3.value)
+        let d = Number(t4.value)
+        dvSub.innerHTML = c - d ;
+
+     }
+     function div(){
+        let e = Number(t5.value)
+        let f = Number(t6.value)
+        dvDiv.innerHTML = e/f ;
+
+     }
+    </script>
+ 
+</head>
+<body>
+    <input type="text" id="t1">
+    <input type="text" id="t2">
+
+    <button onclick="calc()">Submit</button>
+    <hr>
+    <div id="dvResult"></div>
+    <hr>
+    <input type="text" id="t3">
+    <input type="text" id="t4">
+    <button onclick="sub()">Subtract</button>
+    <hr>
+    <div id="dvSub"></div>
+    <hr>
+    <input type="text" id="t5">
+    <input type="text" id="t6">
+    <button onclick="div()">divide</button>
+    <hr>
+    <div id="dvDiv"></div>
+</body>
+</html>
