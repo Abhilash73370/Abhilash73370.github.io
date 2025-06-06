@@ -9,21 +9,22 @@
 
     function add() {
       const input = document.getElementById("txt1").value;
-      fruits.push(input);
+      fruits.push(input); 
+      disFruits()
+     
+    }
 
-      const listHTML = fruits
-        .map((fruit) => `<li>${fruit} <button onclick="deleteFruit('${fruit}')">Delete</button></li>`)
+    function disFruits(){
+        const listHTML = fruits
+        .map((fruit) => `<li>${fruit} <button onclick=deleteFruit('${fruit}')>Delete</button></li>`)
         .join("");
       document.getElementById("fruitList").innerHTML = listHTML;
     }
 
     function deleteFruit(name) {
       fruits = fruits.filter(fruit => fruit !== name);
-
-      const listHTML = fruits
-        .map((fruit) => `<li>${fruit} <button onclick="deleteFruit('${fruit}')">Delete</button></li>`)
-        .join("");
-      document.getElementById("fruitList").innerHTML = listHTML;
+      disFruits()
+      
     }
   </script>
 </head>
