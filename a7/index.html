@@ -10,12 +10,11 @@
     function add() {
       const input = document.getElementById("txt1").value;
       fruits.push(input); 
-      disFruits()
-     
+      disFruits();
     }
 
-    function disFruits(){
-        const listHTML = fruits
+    function disFruits() {
+      const listHTML = fruits
         .map((fruit) => `<li>${fruit} <button onclick=deleteFruit('${fruit}')>Delete</button></li>`)
         .join("");
       document.getElementById("fruitList").innerHTML = listHTML;
@@ -23,8 +22,16 @@
 
     function deleteFruit(name) {
       fruits = fruits.filter(fruit => fruit !== name);
-      disFruits()
-      
+      disFruits();
+    }
+
+    function Search() {
+      const input = document.getElementById("txt2").value;
+      fruits = fruits.filter(fruit => fruit == input);
+      const resultHTML = result
+        .map(fruit => `<li>${fruit}</li>`)
+        .join("");
+      document.getElementById("searchResult").innerHTML = resultHTML 
     }
   </script>
 </head>
@@ -34,6 +41,11 @@
     <input type="text" id="txt1" />
     <button onclick="add()">Add</button>
     <ul id="fruitList"></ul>
+    <input type="text" id="txt2" />
+    <button onclick="Search()">Search</button>
+    <ul id="searchResult"></ul>
   </div>
 </body>
 </html>
+
+
