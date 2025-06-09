@@ -15,7 +15,7 @@
 
     function disFruits() {
       const listHTML = fruits
-        .map((fruit) => `<li>${fruit} <button onclick=deleteFruit('${fruit}')>Delete</button></li>`)
+        .map((fruit) => `<li>${fruit} <button onclick="deleteFruit('${fruit}')">Delete</button></li>`)
         .join("");
       document.getElementById("fruitList").innerHTML = listHTML;
     }
@@ -26,12 +26,12 @@
     }
 
     function Search() {
-      const input = document.getElementById("txt2").value;
-      fruits = fruits.filter(fruit => fruit == input);
+      const input = document.getElementById("txt2").value.trim().toLowerCase();
+      const result = fruits.filter(fruit => fruit.toLowerCase() === input);
       const resultHTML = result
         .map(fruit => `<li>${fruit}</li>`)
         .join("");
-      document.getElementById("searchResult").innerHTML = resultHTML 
+      document.getElementById("searchResult").innerHTML = resultHTML;
     }
   </script>
 </head>
@@ -47,5 +47,3 @@
   </div>
 </body>
 </html>
-
-
